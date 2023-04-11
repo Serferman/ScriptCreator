@@ -40,10 +40,10 @@ FOR /L %%i IN (0,1,%LIMITE_BUCLE1%) DO (
 goto :final_modulo
 
 :subRutina2
-CALL SET "COMPUTER_VALUE=%%COMPUTER[%1]%%"
-CALL SET COMPUTER_VALUE_FILTRADO=%COMPUTER_VALUE:"=%
-echo %1 - %COMPUTER_VALUE_FILTRADO%
-IF %t% EQU %NUMERO_LINEAS% goto :end2
+    CALL SET "COMPUTER_VALUE=%%COMPUTER[%1]%%"
+    CALL SET COMPUTER_VALUE_FILTRADO=%COMPUTER_VALUE:"=%
+    echo %1 - %COMPUTER_VALUE_FILTRADO%
+    IF %t% EQU %NUMERO_LINEAS% goto :end2
 GOTO :eof
 :end2
 
@@ -114,7 +114,7 @@ GOTO :tag_14_final_comprobacion_filtrado
 :tag_14_final_comprobacion_filtrado
 
 REM Devuelve la variable con la ruta raiz remota ya construida.
-SET CARPETA_RED=\\%CARPETA_RED%\
+SET CARPETA_RED=\%CARPETA_RED%\
 
 REM ----------------- Final ruta local donde se localizará la carpeta que crearemos posteriormente ----------------
 REM ---------------------------------------------------------------------------------------------------------------

@@ -28,7 +28,7 @@ GOTO :tag_09_comprobacion_general_conexion_erronea
 
     :tag_03_mini_bucle_decision_cambiar_IP
     echo.
-    SET /p CAMBIAR_IP="Quieres cambiar la direccion IP | 1.- SI | 2.- NO |: "
+    SET /p CAMBIAR_IP="¿Quieres cambiar la direccion IP? | 1.- SI | 2.- NO |: "
     echo %CAMBIAR_IP%
     IF %CAMBIAR_IP% LSS 1 GOTO :tag_03_mini_bucle_decision_cambiar_IP
     IF %CAMBIAR_IP% GTR 2 GOTO :tag_03_mini_bucle_decision_cambiar_IP

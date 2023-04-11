@@ -1,7 +1,7 @@
-@echo on
+@echo off
 
 REM ---------------------------------------------------------------------------------------------------------------
-REM -------------------- Cantidad de bloques/carpetas que tendra nuestro script posteriormente --------------------
+REM ------------------------------------------ Nombre del usuario remoto ------------------------------------------
 
 :tag_36_inicio_nombre_usuario
     SET /p USUARIO="Introduce tu usuario remoto: "
@@ -9,5 +9,5 @@ REM -------------------- Cantidad de bloques/carpetas que tendra nuestro script 
 IF "%USUARIO%"=="" GOTO :tag_36_inicio_nombre_usuario
 IF "%USUARIO%"==" " GOTO :tag_36_inicio_nombre_usuario
 
-REM ----------------- Final cantidad de bloques/carpetas que tendra nuestro script posteriormente -----------------
+REM --------------------------------------- Final nombre del usuario remoto ---------------------------------------
 REM ---------------------------------------------------------------------------------------------------------------
