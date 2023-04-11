@@ -118,7 +118,7 @@ GOTO :eof
 :tag_34_final_modulo
 
 REM Devuelve la variable con la ruta raiz local ya construida.
-SET LETRA_UNIDAD=%LETRA_UNIDAD%:
+SET LETRA_UNIDAD_REMOTA=%LETRA_UNIDAD%:
 
 REM ----------------------- Final letra de la unidad en la que mapearemos la carpeta remota -----------------------
 REM ---------------------------------------------------------------------------------------------------------------

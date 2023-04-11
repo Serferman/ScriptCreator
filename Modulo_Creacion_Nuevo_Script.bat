@@ -25,12 +25,12 @@ GOTO :tag_39_final_bucle_principal_creacion_script
     :tag_41_mapeo_carpetas_remotas
         echo.
         call Modulo_Comprobacion_Letra_Unidad_Remota.bat
-        REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD% ---------
-        REM echo %LETRA_UNIDAD%
+        REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD_REMOTA% ---------
+        REM echo %LETRA_UNIDAD_REMOTA%
 
         REM Mapeo de la carpeta en red a una unidad local, para ello necesitamos una letra de unidad.
         echo echo ------------------ BLOQUE %CONTADOR_BLOQUES% ------------------ >> %NOMBRE_ARCHIVO%
-        echo net use %LETRA_UNIDAD% "%CARPETA_RED%" /user:%USUARIO% %password_hash% >> %NOMBRE_ARCHIVO%
+        echo net use %LETRA_UNIDAD_REMOTA% "%CARPETA_RED%" /user:%USUARIO% %password_hash% >> %NOMBRE_ARCHIVO%
         echo echo ---------------------------------------------- >> %NOMBRE_ARCHIVO%
         echo. >> %NOMBRE_ARCHIVO%
         SET /a CANTIDAD_CARPETAS -= 1
@@ -44,29 +44,29 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         echo SET CARPETA_RED=%RUTA_REMOTA_COMPLETA% >> %NOMBRE_ARCHIVO%
 
         call Modulo_Comprobacion_Directorios_Locales.bat
-        REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %RUTA_COMPLETA% ---------
-        REM echo %RUTA_COMPLETA%
+        REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %RUTA_LOCAL_COMPLETA% ---------
+        REM echo %RUTA_LOCAL_COMPLETA%
 
         REM Declaracion de la ruta y carpeta local a una variable con el mismo nombre que la carpeta
-        echo SET CARPETA_LOCAL=%RUTA_COMPLETA% >> %NOMBRE_ARCHIVO%
+        echo SET CARPETA_LOCAL=%RUTA_LOCAL_COMPLETA% >> %NOMBRE_ARCHIVO%
 
         REM -------------------------------------------Estructura---------------------------------------------
         @echo. >> %NOMBRE_ARCHIVO%
         echo :back%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        echo IF NOT EXIST %RUTA_COMPLETA% GOTO :inicio_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
+        echo IF NOT EXIST %RUTA_LOCAL_COMPLETA% GOTO :inicio_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
         echo GOTO :final_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
         @echo. >> %NOMBRE_ARCHIVO%
         echo :inicio_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        echo echo Creando la carpeta %RUTA_COMPLETA% >> %NOMBRE_ARCHIVO%
-        echo mkdir %RUTA_COMPLETA% >> %NOMBRE_ARCHIVO%
+        echo echo Creando la carpeta %RUTA_LOCAL_COMPLETA% >> %NOMBRE_ARCHIVO%
+        echo mkdir %RUTA_LOCAL_COMPLETA% >> %NOMBRE_ARCHIVO%
         @echo. >> %NOMBRE_ARCHIVO%
         echo GOTO :back%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
         echo :final_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
     
         REM --------------------------------------------COPIAR--------------------------------------------
         @echo. >> %NOMBRE_ARCHIVO%
-        echo echo Copiando la carpeta local "%RUTA_COMPLETA%" a la carpeta remota "%RUTA_REMOTA_COMPLETA%" >> %NOMBRE_ARCHIVO%
-        echo xcopy %RUTA_COMPLETA%\* %RUTA_REMOTA_COMPLETA% /E /H /R /Y /I /D /C /F >> %NOMBRE_ARCHIVO%
+        echo echo Copiando la carpeta local "%RUTA_LOCAL_COMPLETA%" a la carpeta remota "%RUTA_REMOTA_COMPLETA%" >> %NOMBRE_ARCHIVO%
+        echo xcopy %RUTA_LOCAL_COMPLETA%\* %RUTA_REMOTA_COMPLETA% /E /H /R /Y /I /D /C /F >> %NOMBRE_ARCHIVO%
         echo echo ---------------------------------------------- >> %NOMBRE_ARCHIVO%
         @echo. >> %NOMBRE_ARCHIVO%
 
