@@ -12,6 +12,7 @@ IF "%CANTIDAD_CARPETAS%"==" " GOTO :tag_35_inicio_cantidad_carpetas_script
 IF %CANTIDAD_CARPETAS% LEQ 0 GOTO :tag_35_inicio_cantidad_carpetas_script
 
 SET "PUNTO2=%CANTIDAD_CARPETAS:.=%"
+
 IF "%PUNTO2%" NEQ "%CANTIDAD_CARPETAS%" GOTO :tag_35_inicio_cantidad_carpetas_script
 
 echo %CANTIDAD_CARPETAS% > temp.txt
@@ -23,7 +24,7 @@ IF %errorlevel%==0 GOTO :tag_35_inicio_cantidad_carpetas_script
 
 del temp.txt
 
-REM %CANTIDAD_CARPETAS% 
+REM Devuelve esta variable -- %CANTIDAD_CARPETAS% --
 
 REM ----------------- Final cantidad de bloques/carpetas que tendra nuestro script posteriormente -----------------
 REM ---------------------------------------------------------------------------------------------------------------

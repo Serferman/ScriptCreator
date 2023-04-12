@@ -1,13 +1,14 @@
 @echo off
 
 REM ---------------------------------------------------------------------------------------------------------------
-REM -------------------- "Ruta local donde se localizará la carpeta que crearemos posteriormente" -------------------
+REM ------------------- Contraseña encriptada que posteriormente se guardará en el nuevo script -------------------
 
 echo.
 echo Introduce tu contraseña:
 SET "psCommand1=powershell -Command "$pword = read-host ' ' -AsSecureString ; ^
     $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); ^
     [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)""
+    
 FOR /f "usebackq delims=" %%p IN (`%psCommand1%`) DO set password=%%p
 
 echo.
@@ -32,12 +33,14 @@ GOTO :tag_19_final_comprobacion_algoritmo_defecto
 
     SET g=0
     setlocal EnableDelayedExpansion
+
     FOR %%t IN (%LISTA_ALGORITMOS%) DO (
         SET ARRAY_LISTA_ALGORITMOS[!g!]=%%t
         SET /a g+=1
     )
 
     SET /a LIMITE_BUCLE2 = %g% - 1
+
     FOR /L %%k IN (0,1,%LIMITE_BUCLE2%) DO (
         FOR %%m IN (%%k) DO ( 
             IF %%m==2 (
@@ -67,10 +70,11 @@ SET "psCommand2=powershell -Command "$stream = [System.IO.MemoryStream]::new(); 
     $stream.Position = 0; ^
     $hash = (Get-FileHash -InputStream $stream -Algorithm '%ALGORITMO%').Hash; ^
     Write-Output $hash ""
+
 FOR /f "usebackq delims=" %%r IN (`%psCommand2%`) DO set PASSWORD_HASH=%%r
 
-REM %PASSWORD_HASH% es la contraseña 
-REM %ALGORITMO%
+REM Devuelve esta variable -- %PASSWORD_HASH% -- 
+REM Devuelve esta variable -- %ALGORITMO% --
 
-REM ----------------- "Final ruta local donde se localizará la carpeta que crearemos posteriormente" ----------------
+REM ---------------- Final contraseña encriptada que posteriormente se guardará en el nuevo script ----------------
 REM ---------------------------------------------------------------------------------------------------------------
