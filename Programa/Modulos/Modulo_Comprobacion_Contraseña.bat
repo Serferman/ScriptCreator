@@ -64,9 +64,12 @@ SET "psCommand2=powershell -Command "$stream = [System.IO.MemoryStream]::new(); 
     $stream.Position = 0; ^
     $hash = (Get-FileHash -InputStream $stream -Algorithm '%ALGORITMO%').Hash; ^
     Write-Output $hash ""
-FOR /f "usebackq delims=" %%r IN (`%psCommand2%`) DO set password_hash=%%r
-REM echo %password_hash%
-REM echo %password_hash% >> hash.txt
+FOR /f "usebackq delims=" %%r IN (`%psCommand2%`) DO set PASSWORD_HASH=%%r
+
+REM %PASSWORD_HASH% es la contraseña 
+REM %ALGORITMO%
+echo %PASSWORD_HASH%
+echo %ALGORITMO%
 
 REM ----------------- "Final ruta local donde se localizará la carpeta que crearemos posteriormente" ----------------
 REM ---------------------------------------------------------------------------------------------------------------
