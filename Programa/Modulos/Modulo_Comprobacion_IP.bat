@@ -1,6 +1,6 @@
 @echo off
-echo.
-echo.
+
+
 SET /p RUTA_RED="Introduce la IP o FQDN del servidor: "
 echo.
 
@@ -18,13 +18,17 @@ GOTO :tag_09_comprobacion_general_conexion_erronea
 
     :tag_08_comprobacion_general_conexion_exitosa
     echo.
+    echo ---------------------------------------
     echo La conexion al servidor ha sido exitosa
+    echo ---------------------------------------
     GOTO :tag_10_final_bucle_comprobacion_general_conexion_exitosa
 
     :tag_09_comprobacion_general_conexion_erronea   
     :tag_06_conexion_erronea
     echo.
+    echo ----------------------------------
     echo La conexion al servidor ha fallado
+    echo ----------------------------------
 
     :tag_03_mini_bucle_decision_cambiar_IP
     echo.

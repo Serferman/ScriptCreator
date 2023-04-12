@@ -23,5 +23,7 @@ IF %errorlevel%==0 GOTO :tag_35_inicio_cantidad_carpetas_script
 
 del temp.txt
 
+REM %CANTIDAD_CARPETAS% 
+
 REM ----------------- Final cantidad de bloques/carpetas que tendra nuestro script posteriormente -----------------
 REM ---------------------------------------------------------------------------------------------------------------

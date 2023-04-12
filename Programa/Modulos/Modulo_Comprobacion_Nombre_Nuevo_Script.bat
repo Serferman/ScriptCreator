@@ -13,5 +13,7 @@ IF "%NOMBRE_ARCHIVO%"==" " GOTO :tag_36_inicio_nombre_nuevo_script
 SET "PUNTO1=%NOMBRE_ARCHIVO:.=%"
 IF "%PUNTO1%" NEQ "%NOMBRE_ARCHIVO%" GOTO :tag_36_inicio_nombre_nuevo_script
 
+REM %NOMBRE_ARCHIVO%
+
 REM ------------------------ Final nuevo nombre del script que crearemos a partir de este -------------------------
 REM ---------------------------------------------------------------------------------------------------------------

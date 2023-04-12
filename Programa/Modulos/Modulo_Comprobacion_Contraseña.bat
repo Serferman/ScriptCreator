@@ -29,6 +29,7 @@ IF %PREGUNTA_ALGORITMO% EQU 2 GOTO :tag_18_comprobacion_algoritmo_cambiado
 GOTO :tag_19_final_comprobacion_algoritmo_defecto
 
 :tag_18_comprobacion_algoritmo_cambiado
+
     SET g=0
     setlocal EnableDelayedExpansion
     FOR %%t IN (%LISTA_ALGORITMOS%) DO (
@@ -53,9 +54,11 @@ GOTO :tag_19_final_comprobacion_algoritmo_defecto
     SET ALGORITMO=!ARRAY_LISTA_ALGORITMOS[%PREGUNTA_ALGORITMO_CAMBIADO%]!
 
     setlocal DisableDelayedExpansion
+
 GOTO :tag_19_final_comprobacion_algoritmo_defecto
 
 :tag_19_final_comprobacion_algoritmo_defecto
+
 SET password_hash=0
 SET "psCommand2=powershell -Command "$stream = [System.IO.MemoryStream]::new(); ^
     $writer = [System.IO.StreamWriter]::new($stream); ^
@@ -68,8 +71,6 @@ FOR /f "usebackq delims=" %%r IN (`%psCommand2%`) DO set PASSWORD_HASH=%%r
 
 REM %PASSWORD_HASH% es la contraseña 
 REM %ALGORITMO%
-echo %PASSWORD_HASH%
-echo %ALGORITMO%
 
 REM ----------------- "Final ruta local donde se localizará la carpeta que crearemos posteriormente" ----------------
 REM ---------------------------------------------------------------------------------------------------------------
