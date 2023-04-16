@@ -3,16 +3,15 @@
 REM ---------------------------------------------------------------------------------------------------------------
 REM ----------------- Creacion de la ruta local para la posterior copia en el interior de la misma ----------------
 
-call Modulo_Comprobacion_Letra_Unidad_Local.bat
+call ./Modulos/Modulo_Comprobacion_Letra_Unidad_Local.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD_LOCAL% ---------
 REM echo %LETRA_UNIDAD_LOCAL%
 
-SET RUTA_LOCAL_COMPLETA=%LETRA_UNIDAD_LOCAL%
 SET CONT=0
+SET RUTA_LOCAL_COMPLETA=%LETRA_UNIDAD_LOCAL%\
 
 :tag_58_nuevo_array
-
-dir %RUTA_LOCAL_COMPLETA% > Letra_Carpeta.txt
+dir %RUTA_LOCAL_COMPLETA% >> Letra_Carpeta.txt
 
 SET b=0
 

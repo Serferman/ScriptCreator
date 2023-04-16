@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 REM ---------------------------------------------------------------------------------------------------------------
 REM -------------------- Cantidad de bloques/carpetas que tendra nuestro script posteriormente --------------------
@@ -25,11 +25,11 @@ GOTO :tag_39_final_bucle_principal_creacion_script
     :tag_41_mapeo_carpetas_remotas
 
         echo.
-        call .\Modulo_Comprobacion_Letra_Unidad_Remota.bat
+        call .\Modulos\Modulo_Comprobacion_Letra_Unidad_Remota.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD_REMOTA% ---------
         REM echo %LETRA_UNIDAD_REMOTA%
 
-        call .\Modulo_Comprobacion_Directorios_Remotos.bat
+        call .\Modulos\Modulo_Comprobacion_Directorios_Remotos.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ---------- %CARPETA_RED% ---------
         REM echo %CARPETA_RED%
 
@@ -50,7 +50,7 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         SET RUTA_REMOTA_COMPLETA=\\%RUTA_RED%%CARPETA_RED%
         echo SET CARPETA_RED=%RUTA_REMOTA_COMPLETA% >> %NOMBRE_ARCHIVO%
 
-        call .\Modulo_Comprobacion_Directorios_Locales.bat
+        call .\Modulos\Modulo_Comprobacion_Directorios_Locales.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %RUTA_LOCAL_COMPLETA% ---------
         REM echo %RUTA_LOCAL_COMPLETA%
 
