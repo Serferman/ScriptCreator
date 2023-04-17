@@ -14,10 +14,9 @@ GOTO :tag_39_final_bucle_principal_creacion_script
     echo ------------------------------- PARAMETROS PARTICULARES DE CADA BLOQUE ---------------------------------
     echo.
 
-    :tag_40_reiniciar_pregunta_mapeo_copiar
-        SET /p MAPEO_O_COPIAR="¿Quieres MAPEAR la carpeta remota o COPIAR sus archivos a una carpeta local? | 1.- MAPEAR | 2.- COPIAR |:"
-    IF %MAPEO_O_COPIAR% LSS 1 GOTO :tag_40_reiniciar_pregunta_mapeo_copiar
-    IF %MAPEO_O_COPIAR% GTR 2 GOTO :tag_40_reiniciar_pregunta_mapeo_copiar
+    call .\Modulos\Modulo_Comprobacion_Mapear_Copiar.bat
+    REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %MAPEO_O_COPIAR%---------
+    REM echo %MAPEO_O_COPIAR%
 
     IF %MAPEO_O_COPIAR%==1 GOTO :tag_41_mapeo_carpetas_remotas
     IF %MAPEO_O_COPIAR%==2 GOTO :tag_42_copiar_contenido_carpetas_remotas
