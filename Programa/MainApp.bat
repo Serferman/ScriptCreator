@@ -5,32 +5,33 @@ echo ---------------------------------- MENU ----------------------------------
 echo ------------------------- PARAMETROS GENERALES ---------------------------
 echo.
 
-call .\Modulos\Modulo_Comprobacion_Cantidad_Carpetas.bat
+call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Cantidad_Carpetas.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ------- %CANTIDAD_CARPETAS% ------
 REM echo %CANTIDAD_CARPETAS%
 
 echo.
 
-call .\Modulos\Modulo_Comprobacion_Nombre_Nuevo_Script.bat
+call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Nombre_Nuevo_Script.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %NOMBRE_ARCHIVO% -------
 REM echo %NOMBRE_ARCHIVO%
 
 echo.
 
 REM -------------- Definición de la extensión del archivo creado ---------------
-SET NOMBRE_ARCHIVO=%NOMBRE_ARCHIVO%.bat 
+SET RUTA_LOCAL_CREACION_SCRIPT=.\%NOMBRE_ARCHIVO%.bat 
 
-call .\Modulos\Modulo_Comprobacion_IP.bat
+
+call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_IP.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ----------- %RUTA_RED% -----------
 REM echo %RUTA_RED% 
 
 echo.
 
-call .\Modulos\Modulo_Comprobacion_Usuario.bat
+call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Usuario.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ------------ %USUARIO% -----------
 REM echo %USUARIO%
 
-call .\Modulos\Modulo_Comprobacion_Contraseña.bat
+call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Contraseña.bat
 REM ESTE SCRIPT DEVUELVE DOS VARIABLES LLAMADAS - %PASSWORD_HASH% - %ALGORITMO% -
 REM echo %PASSWORD_HASH%
 REM echo %ALGORITMO%
@@ -38,12 +39,12 @@ REM echo %ALGORITMO%
 echo.
 
 REM ----------------------------------------------------------------------------
-echo @echo off > %NOMBRE_ARCHIVO%
-echo net use * /delete /yes >> %NOMBRE_ARCHIVO%
-@echo. >> %NOMBRE_ARCHIVO%
+echo @echo off > %RUTA_LOCAL_CREACION_SCRIPT%
+echo net use * /delete /yes >> %RUTA_LOCAL_CREACION_SCRIPT%
+@echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 REM ----------------------------------------------------------------------------
 
-call .\Modulos\Modulo_Creacion_Nuevo_Script.bat
+call .\Modulos\Comprobaciones_Generales\Modulo_Creacion_Nuevo_Script.bat
 REM ESTE SCRIPT DEVUELVE OTRO SCRIPT COMPLETO LLAMADO ---- %NOMBRE_ARCHIVO% ----
 REM echo %NOMBRE_ARCHIVO%
 

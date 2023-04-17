@@ -1,4 +1,4 @@
-@echo off
+@echo on
 
 REM ---------------------------------------------------------------------------------------------------------------
 REM -------------------- Cantidad de bloques/carpetas que tendra nuestro script posteriormente --------------------
@@ -14,7 +14,7 @@ GOTO :tag_39_final_bucle_principal_creacion_script
     echo ------------------------------- PARAMETROS PARTICULARES DE CADA BLOQUE ---------------------------------
     echo.
 
-    call .\Modulos\Modulo_Comprobacion_Mapear_Copiar.bat
+    call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Mapear_Copiar.bat
     REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %MAPEO_O_COPIAR%---------
     REM echo %MAPEO_O_COPIAR%
 
@@ -24,19 +24,19 @@ GOTO :tag_39_final_bucle_principal_creacion_script
     :tag_41_mapeo_carpetas_remotas
 
         echo.
-        call .\Modulos\Modulo_Comprobacion_Letra_Unidad_Remota.bat
+        call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Letra_Unidad_Remota.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD_REMOTA% ---------
         REM echo %LETRA_UNIDAD_REMOTA%
 
-        call .\Modulos\Modulo_Comprobacion_Directorios_Remotos.bat
+        call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Directorios_Remotos.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ---------- %CARPETA_RED% ---------
         REM echo %CARPETA_RED%
 
         REM Mapeo de la carpeta en red a una unidad local, para ello necesitamos una letra de unidad.
-        echo echo ------------------ BLOQUE %CONTADOR_BLOQUES% ------------------ >> %NOMBRE_ARCHIVO%
-        echo net use %LETRA_UNIDAD_REMOTA% "%CARPETA_RED%" /user:%USUARIO% %password_hash% >> %NOMBRE_ARCHIVO%
-        echo echo ---------------------------------------------- >> %NOMBRE_ARCHIVO%
-        echo. >> %NOMBRE_ARCHIVO%
+        echo echo ------------------ BLOQUE %CONTADOR_BLOQUES% ------------------ >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo net use %LETRA_UNIDAD_REMOTA% "%CARPETA_RED%" /user:%USUARIO% %password_hash% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo ---------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         SET /a CANTIDAD_CARPETAS -= 1
         SET /a CONTADOR_BLOQUES += 1
 
@@ -44,41 +44,41 @@ GOTO :tag_39_final_bucle_principal_creacion_script
 
     :tag_42_copiar_contenido_carpetas_remotas
 
-        echo echo ------------------ BLOQUE %CONTADOR_BLOQUES% ------------------ >> %NOMBRE_ARCHIVO%
+        echo echo ------------------ BLOQUE %CONTADOR_BLOQUES% ------------------ >> %RUTA_LOCAL_CREACION_SCRIPT%
         REM Declaracion de la ruta y carpeta en red a una variable con el mismo nombre que la carpeta
         SET RUTA_REMOTA_COMPLETA=\\%RUTA_RED%%CARPETA_RED%
-        echo SET CARPETA_RED=%RUTA_REMOTA_COMPLETA% >> %NOMBRE_ARCHIVO%
+        echo SET CARPETA_RED=%RUTA_REMOTA_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
 
-        call .\Modulos\Modulo_Comprobacion_Directorios_Locales.bat
+        call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Directorios_Locales.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %RUTA_LOCAL_COMPLETA% ---------
         REM echo %RUTA_LOCAL_COMPLETA%
 
-        call .\Modulos\Modulo_Comprobacion_Directorios_Remotos.bat
+        call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Directorios_Remotos.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ---------- %CARPETA_RED% ---------
         REM echo %CARPETA_RED%
 
         REM Declaracion de la ruta y carpeta local a una variable con el mismo nombre que la carpeta
-        echo SET CARPETA_LOCAL=%RUTA_LOCAL_COMPLETA% >> %NOMBRE_ARCHIVO%
+        echo SET CARPETA_LOCAL=%RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
 
         REM -------------------------------------------Estructura---------------------------------------------
-        @echo. >> %NOMBRE_ARCHIVO%
-        echo :back%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        echo IF NOT EXIST %RUTA_LOCAL_COMPLETA% GOTO :inicio_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        echo GOTO :final_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        @echo. >> %NOMBRE_ARCHIVO%
-        echo :inicio_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        echo echo Creando la carpeta %RUTA_LOCAL_COMPLETA% >> %NOMBRE_ARCHIVO%
-        echo mkdir %RUTA_LOCAL_COMPLETA% >> %NOMBRE_ARCHIVO%
-        @echo. >> %NOMBRE_ARCHIVO%
-        echo GOTO :back%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
-        echo :final_bucle%CONTADOR_BLOQUES% >> %NOMBRE_ARCHIVO%
+        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo :back%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo IF NOT EXIST %RUTA_LOCAL_COMPLETA% GOTO :inicio_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo GOTO :final_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo :inicio_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo Creando la carpeta %RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo mkdir %RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo GOTO :back%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo :final_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
     
         REM --------------------------------------------COPIAR--------------------------------------------
-        @echo. >> %NOMBRE_ARCHIVO%
-        echo echo Copiando la carpeta local "%RUTA_LOCAL_COMPLETA%" a la carpeta remota "%RUTA_REMOTA_COMPLETA%" >> %NOMBRE_ARCHIVO%
-        echo xcopy %RUTA_LOCAL_COMPLETA%\* %RUTA_REMOTA_COMPLETA% /E /H /R /Y /I /D /C /F >> %NOMBRE_ARCHIVO%
-        echo echo ---------------------------------------------- >> %NOMBRE_ARCHIVO%
-        @echo. >> %NOMBRE_ARCHIVO%
+        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo Copiando la carpeta local "%RUTA_LOCAL_COMPLETA%" a la carpeta remota "%RUTA_REMOTA_COMPLETA%" >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo xcopy %RUTA_LOCAL_COMPLETA%\* %RUTA_REMOTA_COMPLETA% /E /H /R /Y /I /D /C /F >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo ---------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
+        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
         SET /a CANTIDAD_CARPETAS -= 1
         SET /a CONTADOR_BLOQUES += 1

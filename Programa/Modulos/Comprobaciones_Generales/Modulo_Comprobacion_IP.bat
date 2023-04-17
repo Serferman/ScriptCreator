@@ -50,7 +50,9 @@ GOTO :tag_10_final_bucle_comprobacion_general_conexion_exitosa
 
         ping -n 1 %RUTA_RED% | find "TTL="
         IF %errorlevel% NEQ 0 (
+            echo ------------------------------
             echo La IP %RUTA_RED% es incorrecta
+            echo ------------------------------
             GOTO :tag_03_mini_bucle_decision_cambiar_IP
         ) else (
             GOTO :tag_07_conexion_exitosa
