@@ -5,13 +5,13 @@ echo ---------------------------------- MENU ----------------------------------
 echo ------------------------- PARAMETROS GENERALES ---------------------------
 echo.
 
-call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Cantidad_Carpetas.bat
+call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ------- %CANTIDAD_CARPETAS% ------
 REM echo %CANTIDAD_CARPETAS%
 
 echo.
 
-call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Nombre_Nuevo_Script.bat
+call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Nombre_Nuevo_Script.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %NOMBRE_ARCHIVO% -------
 REM echo %NOMBRE_ARCHIVO%
 
@@ -27,7 +27,7 @@ REM echo %RUTA_RED%
 
 echo.
 
-call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Usuario.bat
+call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Usuario.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ------------ %USUARIO% -----------
 REM echo %USUARIO%
 

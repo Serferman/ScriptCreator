@@ -10,8 +10,8 @@ SET NOMBRE_ARCHIVO=
 IF "%NOMBRE_ARCHIVO%"=="" GOTO :tag_36_inicio_nombre_nuevo_script
 IF "%NOMBRE_ARCHIVO%"==" " GOTO :tag_36_inicio_nombre_nuevo_script
 
-SET "PUNTO1=%NOMBRE_ARCHIVO:.=%"
-IF "%PUNTO1%" NEQ "%NOMBRE_ARCHIVO%" GOTO :tag_60_nombre_nuevo_script_aviso
+SET "QUITAR_PUNTO_1=%NOMBRE_ARCHIVO:.=%"
+IF "%QUITAR_PUNTO_1%" NEQ "%NOMBRE_ARCHIVO%" GOTO :tag_60_nombre_nuevo_script_aviso
 GOTO :tag_59_nombre_nuevo_script_aviso_final
 
 :tag_60_nombre_nuevo_script_aviso

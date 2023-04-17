@@ -14,7 +14,7 @@ GOTO :tag_39_final_bucle_principal_creacion_script
     echo ------------------------------- PARAMETROS PARTICULARES DE CADA BLOQUE ---------------------------------
     echo.
 
-    call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Mapear_Copiar.bat
+    call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Mapear_Copiar.bat
     REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %MAPEO_O_COPIAR%---------
     REM echo %MAPEO_O_COPIAR%
 

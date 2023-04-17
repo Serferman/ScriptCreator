@@ -6,14 +6,14 @@ REM -------------------- Cantidad de bloques/carpetas que tendra nuestro script 
 SET CANTIDAD_CARPETAS=
 
 :tag_35_inicio_cantidad_carpetas_script
-    SET /p CANTIDAD_CARPETAS="Introduce el numero de carpetas remotas que quieres mapear localmente: "
+    SET /p CANTIDAD_CARPETAS="Introduce el número de carpetas remotas que quieres mapear localmente: "
 IF "%CANTIDAD_CARPETAS%"=="" GOTO :tag_35_inicio_cantidad_carpetas_script
 IF "%CANTIDAD_CARPETAS%"==" " GOTO :tag_35_inicio_cantidad_carpetas_script
 IF %CANTIDAD_CARPETAS% LEQ 0 GOTO :tag_35_inicio_cantidad_carpetas_script
 
-SET "PUNTO2=%CANTIDAD_CARPETAS:.=%"
+SET "QUITAR_PUNTO_2=%CANTIDAD_CARPETAS:.=%"
 
-IF "%PUNTO2%" NEQ "%CANTIDAD_CARPETAS%" GOTO :tag_35_inicio_cantidad_carpetas_script
+IF "%QUITAR_PUNTO_2%" NEQ "%CANTIDAD_CARPETAS%" GOTO :tag_35_inicio_cantidad_carpetas_script
 
 echo %CANTIDAD_CARPETAS% > temp.txt
 
