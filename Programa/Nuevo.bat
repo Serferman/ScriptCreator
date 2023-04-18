@@ -2,29 +2,30 @@
 net use * /delete /yes  
   
 echo ------------------ BLOQUE 0 ------------------  
-net use R: "\Public\" /user:admin   
+net use R: "\Documentos - Estudios\" /user:admin 87484579674907D11953626479FBF6545308CF8FE6377AF7970CD54BD760DCB4  
 echo ----------------------------------------------  
   
 echo ------------------ BLOQUE 1 ------------------  
-SET CARPETA_RED=\\192.168.192.6\Public\  
-SET CARPETA_LOCAL=\Users\Sergio\Documents  
+SET CARPETA_RED=\\192.168.192.6\Documentos - Estudios\  
+SET CARPETA_LOCAL=C:\Users\Sergio\Documents  
   
-:back1  
-IF NOT EXIST \Users\Sergio\Documents GOTO :inicio_bucle1  
-GOTO :final_bucle1  
+:tag_03_back1  
+IF NOT EXIST C:\Users\Sergio\Documents GOTO :tag_01_inicio_bucle1  
+GOTO :tag_02_final_bucle1  
   
-:inicio_bucle1  
-echo Creando la carpeta \Users\Sergio\Documents  
-mkdir \Users\Sergio\Documents  
+:tag_01_inicio_bucle1  
   
-GOTO :back1  
-:final_bucle1  
+    echo Creando la carpeta C:\Users\Sergio\Documents  
+    mkdir C:\Users\Sergio\Documents  
+    GOTO :tag_03_back1  
   
-echo Copiando la carpeta local "\Users\Sergio\Documents" a la carpeta remota "\\192.168.192.6\Public\"  
-xcopy \Users\Sergio\Documents\* \\192.168.192.6\Public\ /E /H /R /Y /I /D /C /F  
+:tag_02_final_bucle1  
+  
+echo Copiando la carpeta local "C:\Users\Sergio\Documents" a la carpeta remota "\\192.168.192.6\Documentos - Estudios\"  
+xcopy C:\Users\Sergio\Documents\* \\192.168.192.6\Documentos - Estudios\ /E /H /R /Y /I /D /C /F  
 echo ----------------------------------------------  
   
 echo ------------------ BLOQUE 2 ------------------  
-net use T: "\Documentos - Miscelaneo\" /user:admin   
+net use T: "\Documentos - Miscelaneo\" /user:admin 87484579674907D11953626479FBF6545308CF8FE6377AF7970CD54BD760DCB4  
 echo ----------------------------------------------  
   

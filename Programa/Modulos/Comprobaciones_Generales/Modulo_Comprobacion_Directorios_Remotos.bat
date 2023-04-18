@@ -53,7 +53,7 @@ goto :final_modulo
     echo.
 
     :tag_11_inicio_bucle_comprobacion_carpeta_elegida
-        SET /p PREGUNTA_CARPETA_RED="Introduce el numero correspondiente a la carpeta remota: "
+        SET /p PREGUNTA_CARPETA_RED="Introduce el NÚMERO correspondiente a la carpeta remota: "
     IF %PREGUNTA_CARPETA_RED% LSS 0 GOTO :tag_11_inicio_bucle_comprobacion_carpeta_elegida
     IF %PREGUNTA_CARPETA_RED% GTR %LIMITE_BUCLE1% GOTO :tag_11_inicio_bucle_comprobacion_carpeta_elegida
 

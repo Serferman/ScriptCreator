@@ -3,12 +3,10 @@
 REM ---------------------------------------------------------------------------------------------------------------
 REM ------------------- Contraseña encriptada que posteriormente se guardará en el nuevo script -------------------
 
-echo.
-echo Introduce tu contraseña:
-SET "psCommand1=powershell -Command "$pword = read-host ' ' -AsSecureString ; ^
-    $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); ^
-    [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)""
-    
+SET "psCommand1=powershell -Command "$pword = read-host 'Introduce tu contraseña' -AsSecureString ; ^
+     $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); ^
+     [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)""
+
 FOR /f "usebackq delims=" %%p IN (`%psCommand1%`) DO set password=%%p
 
 echo.
@@ -16,7 +14,7 @@ SET ALGORITMO_PREDETERMINADO=SHA256
 SET LISTA_ALGORITMOS=SHA512 SHA384 %ALGORITMO_PREDETERMINADO% SHA1 MACTripleDES MD5 RIPEMD160
 
 :tag_20_inicio_bucle_comprobacion_opcion_algoritmo_elegido
-    SET /p PREGUNTA_ALGORITMO="¿Quieres usar el algoritmo por defecto (%ALGORITMO_PREDETERMINADO%) o usar otro? | 1.- Defecto | 2.- Otro |:"
+    SET /p PREGUNTA_ALGORITMO="¿Quieres usar el algoritmo por defecto (%ALGORITMO_PREDETERMINADO%) o usar otro? | 1.- Defecto | 2.- Otro | : "
 IF %PREGUNTA_ALGORITMO% LSS 1 GOTO :tag_20_inicio_bucle_comprobacion_opcion_algoritmo_elegido
 IF %PREGUNTA_ALGORITMO% GTR 2 GOTO :tag_20_inicio_bucle_comprobacion_opcion_algoritmo_elegido
 
@@ -45,15 +43,18 @@ GOTO :tag_19_final_comprobacion_algoritmo_defecto
         FOR %%m IN (%%k) DO ( 
             IF %%m==2 (
                 call echo %%m - !ARRAY_LISTA_ALGORITMOS[%%m]! - Predeterminada
+            ) else IF %%m==0 (
+                call echo %%m - !ARRAY_LISTA_ALGORITMOS[%%m]! - Algoritmo mas seguro
             ) else (
                 call echo %%m - !ARRAY_LISTA_ALGORITMOS[%%m]!
             )
+
         )
     )
 
     echo.
 
-    SET /p PREGUNTA_ALGORITMO_CAMBIADO="¿Que algoritmo quiere usar? : "
+    SET /p PREGUNTA_ALGORITMO_CAMBIADO="¿Que algoritmo quieres usar? : "
     SET ALGORITMO=!ARRAY_LISTA_ALGORITMOS[%PREGUNTA_ALGORITMO_CAMBIADO%]!
 
     setlocal DisableDelayedExpansion

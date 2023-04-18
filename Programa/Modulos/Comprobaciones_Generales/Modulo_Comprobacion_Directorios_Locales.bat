@@ -3,7 +3,7 @@
 REM ---------------------------------------------------------------------------------------------------------------
 REM ----------------- Creacion de la ruta local para la posterior copia en el interior de la misma ----------------
 
-call ./Modulos/Modulo_Comprobacion_Letra_Unidad_Local.bat
+call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Letra_Unidad_Local.bat
 REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD_LOCAL% ---------
 REM echo %LETRA_UNIDAD_LOCAL%
 
@@ -56,7 +56,7 @@ GOTO :tag_51_saltar_subRutina8
 echo.
 
 :tag_54_comprobacion_bucle_carpeta
-    SET /p CARPETA_PREGUNTA="¿Quieres crear la carpeta nueva en esta o en otra? | 1.- ESTA | 2.- OTRA |:"
+    SET /p CARPETA_PREGUNTA="¿Quieres crear la CARPETA nueva en este directorio o en otro? | 1.- ESTE | 2.- OTRO | : "
 IF %CARPETA_PREGUNTA% LSS 1 GOTO :tag_54_comprobacion_bucle_carpeta
 IF %CARPETA_PREGUNTA% GTR 2 GOTO :tag_54_comprobacion_bucle_carpeta
 
@@ -66,7 +66,7 @@ IF %CARPETA_PREGUNTA%==2 GOTO :tag_53_otra_carpeta_local
 :tag_53_otra_carpeta_local
 
     :tag_55_comprobacion_bucle_carpeta_elegida
-        SET /p CARPETA_LOCAL="Introduce el numero de la carpeta elegida: "
+        SET /p CARPETA_LOCAL="Introduce el NÚMERO de la carpeta elegida: "
     IF %CARPETA_LOCAL% LSS 1 GOTO :tag_55_comprobacion_bucle_carpeta_elegida
     IF %CARPETA_LOCAL% GTR %b% GOTO :tag_55_comprobacion_bucle_carpeta_elegida
 

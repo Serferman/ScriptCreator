@@ -8,6 +8,8 @@ REM -------------------------- Letra de la unidad en la que crearemos la carpeta
 SET v=0
 wmic logicaldisk get caption > Unidades.txt
 
+echo.
+
 FOR /f "skip=1" %%A IN ('type "Unidades.txt"') DO (
     IF not "%%A"=="" (
         call :subRutina5 %%A
@@ -27,7 +29,7 @@ goto :tag_44_saltar_subRutina
 
 DEL Unidades.txt
 
-SET /p LETRA_UNIDAD="Introduce la LETRA de la unidad donde crearas la carpeta: " 
+SET /p LETRA_UNIDAD="Introduce la LETRA/RAÍZ de la unidad donde crearas la nueva carpeta: " 
 echo %LETRA_UNIDAD% > temp.txt
 
 type temp.txt | FindStr /R /C:"[ABCDEFGHIJKLMNÑOPQRSTUVWXYZ]" > nul

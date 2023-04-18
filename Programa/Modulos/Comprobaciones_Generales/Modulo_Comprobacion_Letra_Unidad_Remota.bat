@@ -5,6 +5,11 @@ REM -------------------------- Letra de la unidad en la que mapearemos la carpet
 
 :tag_20_inicio_bucle_comprobacion_letra_unidad
 
+echo ---------------------------------------------------------------------
+echo AVISO: Debes introducir una letra diferente a las que aparecen debajo
+echo ---------------------------------------------------------------------
+echo.
+
 SET v=0
 wmic logicaldisk get caption > Unidades.txt
 
@@ -27,18 +32,17 @@ goto :tag_21_saltar_subRutina
 
 DEL Unidades.txt
 
-SET /p LETRA_UNIDAD="Introduce la LETRA que usaras para mapear la carpeta remota: " 
+SET /p LETRA_UNIDAD="Introduce la LETRA que usaras para mapear la carpeta remota LOCALMENTE: " 
 echo %LETRA_UNIDAD% > temp.txt
 
 type temp.txt | FindStr /R /C:"[ABCDEFGHIJKLMNÑOPQRSTUVWXYZ]" > nul
-
-echo.
 
 IF errorlevel 1 GOTO :tag_22_error_minusculas_mayusculas
 GOTO :tag_23_saltar_error_minusculas_mayusculas
 
 :tag_22_error_minusculas_mayusculas
 
+    echo.
     echo -----------------------------------------------------------------------------------
     echo ERROR: La letra que has introducido no es valida. Introduce solo letras mayusculas.
     echo -----------------------------------------------------------------------------------
@@ -64,8 +68,8 @@ GOTO :tag_34_final_modulo
         GOTO :tag_33_final_comprobaciones_letras_elegidas
 
         :tag_32_inicio_comprobaciones_letras_elegidas
-        
-            echo ----------------------------------------------------------------------------------------------------------------------------------------
+            echo.
+            echo ---------------------------------------------
             call echo ERROR: La letra escogida ya esta en uso.
             
             REM ==============================================================================================================================================
@@ -76,7 +80,7 @@ GOTO :tag_34_final_modulo
             :tag_24_comprobacion_letra_C
 
                 echo Letra "%LETRA_UNIDAD%:" reservada: Normalmente usada por la particion/disco duro principal del sistema operativo.
-                echo ----------------------------------------------------------------------------------------------------------------------------------------
+                echo ----------------------------------------------------------------------------------------------------
                 echo.
                 GOTO :tag_20_inicio_bucle_comprobacion_letra_unidad
 
@@ -90,7 +94,7 @@ GOTO :tag_34_final_modulo
             :tag_25_comprobacion_letra_D
 
                 echo Letra "%LETRA_UNIDAD%:" reservada: Normalmente asignada a la particion/disco duro secundario o al lector de CD/DVD del sistema operativo.
-                echo -----------------------------------------------------------------------------------------------------------------------------------------
+                echo ----------------------------------------------------------------------------------------------------------------------------
                 echo.
                 GOTO :tag_20_inicio_bucle_comprobacion_letra_unidad
 
@@ -104,7 +108,7 @@ GOTO :tag_34_final_modulo
             :tag_26_comprobacion_letra_A
 
                 echo Letra "%LETRA_UNIDAD%:" reservada ^(Obsoleta^): Antiguamente usada por el disquete principal ^del sistema.
-                echo ----------------------------------------------------------------------------------------------------------------------------------------
+                echo ---------------------------------------------------------------------------------------------
                 echo.
 
             :tag_30_final_comprobacion_letra_A
@@ -117,12 +121,12 @@ GOTO :tag_34_final_modulo
             :tag_27_comprobacion_letra_B
 
                 echo Letra "%LETRA_UNIDAD%:" reservada ^(Obsoleta^): Antiguamente usada por el disquete secundario ^del sistema.
-                echo ----------------------------------------------------------------------------------------------------------------------------------------
+                echo ----------------------------------------------------------------------------------------------
                 echo.
 
             :tag_31_final_comprobacion_letra_B
 
-            echo ----------------------------------------------------------------------------------------------------------------------------------------
+            echo ---------------------------------------------
             echo.
             GOTO :tag_20_inicio_bucle_comprobacion_letra_unidad     
         

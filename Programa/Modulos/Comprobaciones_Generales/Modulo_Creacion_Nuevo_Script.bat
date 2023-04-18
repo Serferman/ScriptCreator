@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 REM ---------------------------------------------------------------------------------------------------------------
 REM -------------------- Cantidad de bloques/carpetas que tendra nuestro script posteriormente --------------------
@@ -11,8 +11,7 @@ GOTO :tag_39_final_bucle_principal_creacion_script
 
     :tag_38_inicio_bucle_principal_creacion_script
 
-    echo ------------------------------- PARAMETROS PARTICULARES DE CADA BLOQUE ---------------------------------
-    echo.
+    SET "PRESENTACION_PARAMETROS_PARTICULARES=%ComSpec% /C echo ------------------------------- PARAMETROS PARTICULARES DE CADA BLOQUE --------------------------------- "
 
     call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Mapear_Copiar.bat
     REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %MAPEO_O_COPIAR%---------
@@ -23,10 +22,15 @@ GOTO :tag_39_final_bucle_principal_creacion_script
 
     :tag_41_mapeo_carpetas_remotas
 
-        echo.
+        cls
+        %PRESENTACION_PARAMETROS_PARTICULARES%
+
         call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Letra_Unidad_Remota.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %LETRA_UNIDAD_REMOTA% ---------
         REM echo %LETRA_UNIDAD_REMOTA%
+        
+        cls
+        %PRESENTACION_PARAMETROS_PARTICULARES%
 
         call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Directorios_Remotos.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ---------- %CARPETA_RED% ---------
@@ -40,6 +44,8 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         SET /a CANTIDAD_CARPETAS -= 1
         SET /a CONTADOR_BLOQUES += 1
 
+        cls
+
     GOTO :tag_37_reinicio_bucle_principal_creacion_script
 
     :tag_42_copiar_contenido_carpetas_remotas
@@ -49,9 +55,15 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         SET RUTA_REMOTA_COMPLETA=\\%RUTA_RED%%CARPETA_RED%
         echo SET CARPETA_RED=%RUTA_REMOTA_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
 
+        cls
+        %PRESENTACION_PARAMETROS_PARTICULARES%
+
         call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Directorios_Locales.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA --------- %RUTA_LOCAL_COMPLETA% ---------
         REM echo %RUTA_LOCAL_COMPLETA%
+
+        cls
+        %PRESENTACION_PARAMETROS_PARTICULARES%
 
         call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Directorios_Remotos.bat
         REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA ---------- %CARPETA_RED% ---------
@@ -61,27 +73,30 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         echo SET CARPETA_LOCAL=%RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
 
         REM -------------------------------------------Estructura---------------------------------------------
-        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo :back%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo IF NOT EXIST %RUTA_LOCAL_COMPLETA% GOTO :inicio_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo GOTO :final_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo :inicio_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo echo Creando la carpeta %RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo mkdir %RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo GOTO :back%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo :final_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo :tag_03_back%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo IF NOT EXIST %RUTA_LOCAL_COMPLETA% GOTO :tag_01_inicio_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo GOTO :tag_02_final_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo :tag_01_inicio_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo     echo Creando la carpeta %RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo     mkdir %RUTA_LOCAL_COMPLETA% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo     GOTO :tag_03_back%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo :tag_02_final_bucle%CONTADOR_BLOQUES% >> %RUTA_LOCAL_CREACION_SCRIPT%
     
         REM --------------------------------------------COPIAR--------------------------------------------
-        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo echo Copiando la carpeta local "%RUTA_LOCAL_COMPLETA%" a la carpeta remota "%RUTA_REMOTA_COMPLETA%" >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo xcopy %RUTA_LOCAL_COMPLETA%\* %RUTA_REMOTA_COMPLETA% /E /H /R /Y /I /D /C /F >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo echo ---------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
-        @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
         SET /a CANTIDAD_CARPETAS -= 1
         SET /a CONTADOR_BLOQUES += 1
+
+        cls
 
     GOTO :tag_37_reinicio_bucle_principal_creacion_script
     REM --------------------------- Finalización del bucle ---------------------------
