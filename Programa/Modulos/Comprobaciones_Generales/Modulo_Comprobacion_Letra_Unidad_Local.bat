@@ -5,10 +5,14 @@ REM -------------------------- Letra de la unidad en la que crearemos la carpeta
 
 :tag_43_inicio_bucle_comprobacion_letra_unidad
 
+echo.
+echo -------------------------------------------------------------
+echo AVISO: Debes introducir una de las letras que aparecen debajo
+echo -------------------------------------------------------------
+echo.
+
 SET v=0
 wmic logicaldisk get caption > Unidades.txt
-
-echo.
 
 FOR /f "skip=1" %%A IN ('type "Unidades.txt"') DO (
     IF not "%%A"=="" (
@@ -33,8 +37,6 @@ SET /p LETRA_UNIDAD="Introduce la LETRA/RAÍZ de la unidad donde crearas la nuev
 echo %LETRA_UNIDAD% > temp.txt
 
 type temp.txt | FindStr /R /C:"[ABCDEFGHIJKLMNÑOPQRSTUVWXYZ]" > nul
-
-echo.
 
 IF errorlevel 1 GOTO :tag_45_error_minusculas_mayusculas
 GOTO :tag_46_saltar_error_minusculas_mayusculas

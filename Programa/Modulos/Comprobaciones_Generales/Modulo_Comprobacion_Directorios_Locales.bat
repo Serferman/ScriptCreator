@@ -38,6 +38,7 @@ DEL Letra_Carpeta.txt
 
 SET g=0
 SET /a LIMITE_BUCLE3 = %b%-1
+echo.
 
 FOR /L %%Y IN (0,1,%LIMITE_BUCLE3%) DO (
         call :subRutina8 %%Y
@@ -76,7 +77,6 @@ IF %CARPETA_PREGUNTA%==2 GOTO :tag_53_otra_carpeta_local
     :tag_56_primer_enlace_carpeta
 
         CALL SET "CARPETAS_VALUE_ESPACIOS_FILTRADO=%%CARPETAS[%CARPETA_LOCAL%]%%"
-        echo %CARPETAS_VALUE_ESPACIOS_FILTRADO%
         SET RUTA_LOCAL_COMPLETA=%LETRA_UNIDAD_LOCAL%\%CARPETAS_VALUE_ESPACIOS_FILTRADO%
         SET /a CONT +=1
 
@@ -85,9 +85,7 @@ IF %CARPETA_PREGUNTA%==2 GOTO :tag_53_otra_carpeta_local
     :tag_57_siguientes_enlaces_carpetas
 
         CALL SET "CARPETAS_VALUE_ESPACIOS_FILTRADO=%%CARPETAS[%CARPETA_LOCAL%]%%"
-        echo %CARPETAS_VALUE_ESPACIOS_FILTRADO%
         CALL SET RUTA_LOCAL_COMPLETA=%RUTA_LOCAL_COMPLETA%\%CARPETAS_VALUE_ESPACIOS_FILTRADO%
-        echo %RUTA_LOCAL_COMPLETA%  
 
     GOTO :tag_58_nuevo_array
   

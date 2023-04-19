@@ -2,8 +2,8 @@
 chcp 65001 > nul
 cls
 
-SET "Presentacion=%ComSpec% /C echo ---------------------------------- MENU ---------------------------------- & echo ------------------------- PARAMETROS GENERALES --------------------------- & echo."
-
+SET "Presentacion=%ComSpec% /C echo ________▄▄▄▄▄▄▄▄▄███████████████▄  MENÚ  ▄███████████████▄▄▄▄▄▄▄▄▄________ & echo ▀▀▀▀▀▀▀▀▀▀▀▀▀███████████▀▀ PARÁMETROS GENERALES ▀▀███████████▀▀▀▀▀▀▀▀▀▀▀▀▀ & echo."
+                                                                                                                              
 %Presentacion%
 
 call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat
