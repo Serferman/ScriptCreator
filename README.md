@@ -4,7 +4,7 @@
   
   <table>
     <tr>
-      <img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/>
+      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
     </tr>
   </table>
 
