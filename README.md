@@ -2,8 +2,8 @@
   
   ## Diagrama Modular
   <table>
-    <tr bgcolor="red">
-      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
+    <tr>
+      <td bgcolor="red"><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
     </tr>
   </table>
 
