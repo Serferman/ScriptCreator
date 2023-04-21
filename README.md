@@ -3,7 +3,7 @@
   ## Diagrama Modular
   <table>
     <tr>
-      <td bgcolor="red"><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
+      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
     </tr>
   </table>
 
