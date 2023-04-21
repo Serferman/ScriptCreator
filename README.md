@@ -1,5 +1,5 @@
 # Creador-de-Script
-  
+
   ## Diagrama Modular
   <table>
     <tr>
