@@ -43,7 +43,7 @@ GOTO :tag_39_final_bucle_principal_creacion_script
 
         REM Mapeo de la carpeta en red a una unidad local, para ello necesitamos una letra de unidad.
         echo echo ------------------ BLOQUE %CONTADOR_BLOQUES% ------------------ >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo    net use %LETRA_UNIDAD_REMOTA% "%CARPETA_RED%" /user:%USUARIO% %password_hash% >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo    net use %LETRA_UNIDAD_REMOTA% "\\%RUTA_RED%%CARPETA_RED%" /user:%USUARIO% %%DECRYPTED_PASSWORD%% >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo echo ---------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         SET /a CANTIDAD_CARPETAS -= 1

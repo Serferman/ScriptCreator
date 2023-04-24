@@ -2,8 +2,9 @@
 chcp 65001 > nul
 cls
 
+SET PORCENTAJE=%%
 SET "Presentacion=%ComSpec% /C echo ________▄▄▄▄▄▄▄▄▄███████████████▄  MENÚ  ▄███████████████▄▄▄▄▄▄▄▄▄________ & echo ▀▀▀▀▀▀▀▀▀▀▀▀▀███████████▀▀ PARÁMETROS GENERALES ▀▀███████████▀▀▀▀▀▀▀▀▀▀▀▀▀ & echo."
-                                                                                                                              
+                                                                                                                     
 %Presentacion%
 
 call .\Modulos\Comprobaciones_Preguntas\Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat
@@ -46,10 +47,9 @@ cls
 
 %Presentacion%
 
-call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Contraseña.bat
-REM ESTE SCRIPT DEVUELVE DOS VARIABLES LLAMADAS - %PASSWORD_HASH% - %ALGORITMO% -
-REM echo %ALGORITMO%
-echo %PASSWORD_HASH%
+call .\Modulos\Comprobaciones_Generales\Modulo_Comprobacion_Contraseña_Cifrado.bat
+REM ESTE SCRIPT DEVUELVE UNA VARIABLE LLAMADA -------- %PASSWORD% --------
+REM echo %PASSWORD%
 timeout 3 > nul
 
 echo.
@@ -59,6 +59,21 @@ REM ----------------------------------------------------------------------------
 echo @echo off > %RUTA_LOCAL_CREACION_SCRIPT%
 echo net use * /delete /yes >> %RUTA_LOCAL_CREACION_SCRIPT%
 @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+
+echo SET ENCRYPTED_PASSWORD=%ENCRYPTED_PASSWORD% >> %RUTA_LOCAL_CREACION_SCRIPT%
+
+echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+
+echo SET "psCommand2=powershell -Command "$encrypted = '%%ENCRYPTED_PASSWORD%%' ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
+echo     $password = ConvertTo-SecureString $encrypted -ErrorAction Stop ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
+echo     $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password) ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
+echo     $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
+echo     Write-Output $plainPassword"" >> %RUTA_LOCAL_CREACION_SCRIPT%
+
+echo FOR /f "usebackq delims=" %%%%p IN (`%%psCommand2%%`) DO SET DECRYPTED_PASSWORD=%%%%p >> %RUTA_LOCAL_CREACION_SCRIPT%
+
+echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+
 REM ----------------------------------------------------------------------------
 
 call .\Modulos\Comprobaciones_Generales\Modulo_Creacion_Nuevo_Script.bat
