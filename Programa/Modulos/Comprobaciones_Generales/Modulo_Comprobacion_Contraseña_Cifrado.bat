@@ -13,5 +13,7 @@ echo.
 
 echo %ENCRYPTED_PASSWORD% 
 
+echo.
+
 REM ----------------- Final contraseña cifrada que posteriormente se guardará en el nuevo script ------------------
 REM ---------------------------------------------------------------------------------------------------------------

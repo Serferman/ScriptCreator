@@ -56,19 +56,18 @@ echo.
 cls
 
 REM ----------------------------------------------------------------------------
+
 echo @echo off > %RUTA_LOCAL_CREACION_SCRIPT%
-echo net use * /delete /yes >> %RUTA_LOCAL_CREACION_SCRIPT%
+echo net use * /delete /yes ^> ^nul >> %RUTA_LOCAL_CREACION_SCRIPT%
 @echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
 echo SET ENCRYPTED_PASSWORD=%ENCRYPTED_PASSWORD% >> %RUTA_LOCAL_CREACION_SCRIPT%
-
+echo SET FILTRED_ENCRYPTED_PASSWORD=%%ENCRYPTED_PASSWORD: =%% >> %RUTA_LOCAL_CREACION_SCRIPT%
 echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
-echo SET "psCommand2=powershell -Command "$encrypted = '%%ENCRYPTED_PASSWORD%%' ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
-echo     $password = ConvertTo-SecureString $encrypted -ErrorAction Stop ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
-echo     $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password) ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
-echo     $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) ; ^ >> %RUTA_LOCAL_CREACION_SCRIPT%
-echo     Write-Output $plainPassword"" >> %RUTA_LOCAL_CREACION_SCRIPT%
+SET "psCommand2=powershell -Command " $password = ConvertTo-SecureString -String %FILTRED_ENCRYPTED_PASSWORD% -ErrorAction Stop ; $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password) ; $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) ; Write-Output $plainPassword"" >> %RUTA_LOCAL_CREACION_SCRIPT%
+
+echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
 echo FOR /f "usebackq delims=" %%%%p IN (`%%psCommand2%%`) DO SET DECRYPTED_PASSWORD=%%%%p >> %RUTA_LOCAL_CREACION_SCRIPT%
 

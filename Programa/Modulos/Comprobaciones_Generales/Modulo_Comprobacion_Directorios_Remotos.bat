@@ -3,7 +3,17 @@
 REM ---------------------------------------------------------------------------------------------------------------
 REM -------------------- Ruta local donde se localizará la carpeta que crearemos posteriormente -------------------
 
-net view %RUTA_RED% | find "Disco" > listadoCarpetasRemotas.txt
+SET "psCommand2=powershell -Command "$encrypted = '%ENCRYPTED_PASSWORD%' ; ^
+    $password = ConvertTo-SecureString $encrypted -ErrorAction Stop ; ^
+    $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password) ; ^
+    $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) ; ^
+    Write-Output $plainPassword""
+
+FOR /f "usebackq delims=" %%t IN (`%psCommand2%`) DO SET DECRYPTED_PASSWORD=%%t
+
+NET USE \\%RUTA_RED% /user:%USUARIO% %DECRYPTED_PASSWORD% > nul
+
+NET VIEW %RUTA_RED% | find "Disco" > listadoCarpetasRemotas.txt
 
 REM Contamos la cantidad de lineas que tenemos en nuestro archivo y lo usamos de limitador 
 for /f "delims=" %%E in ('type "listadoCarpetasRemotas.txt" ^| find /v /c ""') do set NUMERO_LINEAS=%%E
@@ -120,7 +130,7 @@ goto :final_modulo
 
     :tag_14_final_comprobacion_filtrado
 
-SET CARPETA_RED=\%CARPETA_RED%\
+SET CARPETA_RED=\%CARPETA_RED%
 
 REM Devuelve esta variable -- %CARPETA_RED% --
 
