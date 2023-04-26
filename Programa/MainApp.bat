@@ -65,13 +65,11 @@ echo SET ENCRYPTED_PASSWORD=%ENCRYPTED_PASSWORD% >> %RUTA_LOCAL_CREACION_SCRIPT%
 echo SET FILTRED_ENCRYPTED_PASSWORD=%%ENCRYPTED_PASSWORD: =%% >> %RUTA_LOCAL_CREACION_SCRIPT%
 echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
-SET "psCommand2=powershell -Command " $password = ConvertTo-SecureString -String %FILTRED_ENCRYPTED_PASSWORD% -ErrorAction Stop ; $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password) ; $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) ; Write-Output $plainPassword"" >> %RUTA_LOCAL_CREACION_SCRIPT%
+echo SET "psCommand2=powershell -Command " $password = ConvertTo-SecureString -String %FILTRED_ENCRYPTED_PASSWORD% -ErrorAction Stop ; $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password) ; $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) ; Write-Output $plainPassword"" >> %RUTA_LOCAL_CREACION_SCRIPT%
 
 echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
 echo FOR /f "usebackq delims=" %%%%p IN (`%%psCommand2%%`) DO SET DECRYPTED_PASSWORD=%%%%p >> %RUTA_LOCAL_CREACION_SCRIPT%
-
-echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
 REM ----------------------------------------------------------------------------
 

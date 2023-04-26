@@ -42,10 +42,11 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         REM echo %CARPETA_RED%
 
         REM Mapeo de la carpeta en red a una unidad local, para ello necesitamos una letra de unidad.
-        echo echo ----------------------------------------- BLOQUE %CONTADOR_BLOQUES% ----------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo -------------------------------------------- BLOQUE %CONTADOR_BLOQUES% -------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo    echo Mapeando una carpeta remota "\\%RUTA_RED%%CARPETA_RED%" a una letra de unidad local "%LETRA_UNIDAD_REMOTA%" >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo    net use %LETRA_UNIDAD_REMOTA% "\\%RUTA_RED%%CARPETA_RED%" /user:%USUARIO% %%DECRYPTED_PASSWORD%% ^> ^nul >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo echo -------------------------------------------------------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo -------------------------------------------------------------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         SET /a CANTIDAD_CARPETAS -= 1
@@ -57,7 +58,8 @@ GOTO :tag_39_final_bucle_principal_creacion_script
 
     :tag_42_copiar_contenido_carpetas_remotas
 
-        echo echo ----------------------------------------- BLOQUE %CONTADOR_BLOQUES% ----------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo -------------------------------------------- BLOQUE %CONTADOR_BLOQUES% -------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         REM Declaracion de la ruta y carpeta en red a una variable con el mismo nombre que la carpeta
         SET RUTA_REMOTA_COMPLETA=\\%RUTA_RED%%CARPETA_RED%
@@ -100,7 +102,7 @@ GOTO :tag_39_final_bucle_principal_creacion_script
         echo    echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo    xcopy %RUTA_LOCAL_COMPLETA%\* "%RUTA_REMOTA_COMPLETA%" /E /H /R /Y /I /D /C /F >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
-        echo echo -------------------------------------------------------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
+        echo echo -------------------------------------------------------------------------------------------------- >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
         echo echo. >> %RUTA_LOCAL_CREACION_SCRIPT%
 
