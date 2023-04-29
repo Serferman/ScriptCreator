@@ -15,61 +15,61 @@
   
   <tr>
     <td> Modulo Comprobacion Pregunta Cantidad Carpetas </td>
-    <td><b></b></td>
+    <td><b>%CANTIDAD_CARPETAS%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Pregunta Nombre Nuevo Script </td>
-    <td><b></b></td>
+    <td><b>%NOMBRE_ARCHIVO%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion IP </td>
-    <td><b></b></td>
+    <td><b>%RUTA_RED%</b></td>
     <td></td>
   </tr>
  
   <tr>
     <td> Modulo Comprobacion Pregunta Usuario </td>
-    <td><b></b></td>
+    <td><b>%USUARIO%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Contraseña Cifrado </td>
-    <td><b></b></td>
+    <td><b>%PASSWORD_HASH%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Pregunta Mapear Copiar </td>
-    <td><b></b></td>
+    <td><b>%MAPEO_O_COPIAR%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Letra Unidad Remota </td>
-    <td><b></b></td>
+    <td><b>%LETRA_UNIDAD_REMOTA%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td>Modulo comprobacion Letra Unidad Local</td>
-    <td><b></b></td>
+    <td><b>%LETRA_UNIDAD_LOCAL%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Directorios Remotos </td>
-    <td><b></b></td>
+    <td><b>%CARPETA_RED%</b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Directorios Locales </td>
-    <td><b></b></td>
+    <td><b>%RUTA_LOCAL_COMPLETA%</b></td>
     <td></td>
   </tr>
   
