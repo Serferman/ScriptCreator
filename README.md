@@ -6,7 +6,7 @@
 
 <table>
   <tr align="center">
-    <td>Modulos</td>
+    <td><b>Modulos</b></td>
     <td>Breve descripción</td>
   </tr>
   
