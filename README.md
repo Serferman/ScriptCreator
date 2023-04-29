@@ -4,6 +4,8 @@
 
 <p> De esta forma se ha creado una plantilla para crear una tarea/script que realize las tareas, que hemos comentado antes, para cada caso que hayamos creado con esta herramienta. </p>
 
+<br>
+
 <table>
   <tr align="center">
     <td><b>Modulos</b></td>
@@ -28,14 +30,12 @@
     <td><b></b></td>
     <td></td>
   </tr>
-  
-  
+ 
   <tr>
     <td> Modulo Comprobacion Usuario </td>
     <td><b></b></td>
     <td></td>
   </tr>
-  
   
   <tr>
     <td> Modulo Comprobacion Contraseña </td>
@@ -43,13 +43,11 @@
     <td></td>
   </tr>
   
-  
   <tr>
     <td> Modulo Comprobacion Pregunta Mapear Copiar </td>
     <td><b></b></td>
     <td></td>
   </tr>
-  
   
   <tr>
     <td> Modulo Comprobacion Letra Unidad Remota </td>
@@ -57,13 +55,11 @@
     <td></td>
   </tr>
   
-  
   <tr>
     <td> Modulo Comprobacion Directorios Remotos </td>
     <td><b></b></td>
     <td></td>
   </tr>
-  
   
   <tr>
     <td> Modulo Comprobacion Directorios Locales </td>
@@ -71,25 +67,24 @@
     <td></td>
   </tr>
   
-  
   <tr>
     <td>Modulo comprobacion Letra Unidad Local</td>
     <td><b></b></td>
     <td></td>
   </tr>
   
-  
   <tr>
     <td>Modulo Creacion Nuevo Script</td>
     <td></td>
   </tr>
-  
   
   <tr>
     <td> MainApp </td>
     <td></td>
   </tr>
 </table>
+
+<br>
 
 ## Diagrama de los Modulos
   <table>
