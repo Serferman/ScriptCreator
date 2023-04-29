@@ -1,6 +1,8 @@
 # ScriptCreator Batch
+## Descripcion
+<p>  </p>
 
-  ## Diagrama Modular
+## Diagrama de los Modulos
   <table>
     <tr>
       <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
@@ -9,7 +11,7 @@
 
   <br><br>
   
-  ## Diagrama de Flujo
+## Diagrama de Flujo
   <table>
     <tr>
       <td><img src="Recursos/Diagramas/DiagramaDeFlujoV1.png"/></td>
