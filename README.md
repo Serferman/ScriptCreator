@@ -6,7 +6,77 @@
 
 <table>
   <tr>
+    <td>Modulos</td>
+    <td>Breve descripción</td>
+  </tr>
   
+  <tr>
+    <td> Modulo Comprobacion Cantidad Carpetas </td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td> Modulo Comprobacion Nombre Nuevo Script </td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td> Modulo Comprobacion IP </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> Modulo Comprobacion Usuario </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> Modulo Comprobacion Contraseña </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> Modulo Comprobacion Pregunta Mapear Copiar </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> Modulo Comprobacion Letra Unidad Remota </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> Modulo Comprobacion Directorios Remotos </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> Modulo Comprobacion Directorios Locales </td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td>Modulo comprobacion Letra Unidad Local</td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td>Modulo Creacion Nuevo Script</td>
+    <td></td>
+  </tr>
+  
+  
+  <tr>
+    <td> MainApp </td>
+    <td></td>
   </tr>
 </table>
 
