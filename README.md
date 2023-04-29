@@ -15,7 +15,7 @@
   
   <tr>
     <td> Modulo Comprobacion Pregunta Cantidad Carpetas </td>
-    <td><b>%CANTIDAD_CARPETAS%</b></td>
+    <td align="center"><b>%CANTIDAD_CARPETAS%</b></td>
     <td></td>
   </tr>
   
