@@ -7,63 +7,74 @@
 <table>
   <tr align="center">
     <td><b>Modulos</b></td>
-    <td>Breve descripción</td>
+    <td><b>Variable</b></td>
+    <td><b>Breve descripción</b></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Cantidad Carpetas </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion Nombre Nuevo Script </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   <tr>
     <td> Modulo Comprobacion IP </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td> Modulo Comprobacion Usuario </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td> Modulo Comprobacion Contraseña </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td> Modulo Comprobacion Pregunta Mapear Copiar </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td> Modulo Comprobacion Letra Unidad Remota </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td> Modulo Comprobacion Directorios Remotos </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td> Modulo Comprobacion Directorios Locales </td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
   
   <tr>
     <td>Modulo comprobacion Letra Unidad Local</td>
+    <td><b></b></td>
     <td></td>
   </tr>
   
