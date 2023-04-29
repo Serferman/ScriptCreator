@@ -38,7 +38,7 @@
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Contraseña </td>
+    <td> Modulo Comprobacion Contraseña Cifrado </td>
     <td><b></b></td>
     <td></td>
   </tr>
