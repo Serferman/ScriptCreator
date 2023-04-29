@@ -14,72 +14,72 @@
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Pregunta Cantidad Carpetas </td>
+    <td> Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat </td>
     <td align="center"><b>%CANTIDAD_CARPETAS%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Pregunta Nombre Nuevo Script </td>
+    <td> Modulo_Comprobacion_Pregunta_Nombre_Nuevo_Script.bat </td>
     <td align="center"><b>%NOMBRE_ARCHIVO%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion IP </td>
+    <td> Modulo_Comprobacion_IP.bat </td>
     <td align="center"><b>%RUTA_RED%</b></td>
     <td></td>
   </tr>
  
   <tr>
-    <td> Modulo Comprobacion Pregunta Usuario </td>
+    <td> Modulo_Comprobacion_Pregunta_Usuario.bat </td>
     <td align="center"><b>%USUARIO%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Contraseña Cifrado </td>
+    <td> Modulo_Comprobacion_Contraseña_Cifrado.bat </td>
     <td align="center"><b>%PASSWORD_HASH%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Pregunta Mapear Copiar </td>
+    <td> Modulo_Comprobacion_Pregunta_Mapear_Copiar.bat </td>
     <td align="center"><b>%MAPEO_O_COPIAR%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Letra Unidad Remota </td>
+    <td> Modulo_Comprobacion_Letra_Unidad_Remota.bat </td>
     <td align="center"><b>%LETRA_UNIDAD_REMOTA%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td>Modulo comprobacion Letra Unidad Local</td>
+    <td> Modulo_comprobacion_Letra_Unidad_Local.bat </td>
     <td align="center"><b>%LETRA_UNIDAD_LOCAL%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Directorios Remotos </td>
+    <td> Modulo_Comprobacion_Directorios_Remotos.bat </td>
     <td align="center"><b>%CARPETA_RED%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Directorios Locales </td>
+    <td> Modulo_Comprobacion_Directorios_Locales.bat </td>
     <td align="center"><b>%RUTA_LOCAL_COMPLETA%</b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td>Modulo Creacion Nuevo Script</td>
+    <td> Modulo_Creacion_Nuevo_Script.bat </td>
     <td></td>
   </tr>
   
   <tr>
-    <td> MainApp </td>
+    <td> MainApp.bat </td>
     <td></td>
   </tr>
 </table>
