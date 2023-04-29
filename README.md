@@ -5,7 +5,7 @@
 <p> De esta forma se ha creado una plantilla para crear una tarea/script que realize las tareas, que hemos comentado antes, para cada caso que hayamos creado con esta herramienta. </p>
 
 <table>
-  <tr>
+  <tr align="center">
     <td>Modulos</td>
     <td>Breve descripción</td>
   </tr>
