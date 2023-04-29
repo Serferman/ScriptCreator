@@ -14,13 +14,13 @@
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Cantidad Carpetas </td>
+    <td> Modulo Comprobacion Pregunta Cantidad Carpetas </td>
     <td><b></b></td>
     <td></td>
   </tr>
   
   <tr>
-    <td> Modulo Comprobacion Nombre Nuevo Script </td>
+    <td> Modulo Comprobacion Pregunta Nombre Nuevo Script </td>
     <td><b></b></td>
     <td></td>
   </tr>
@@ -32,7 +32,7 @@
   </tr>
  
   <tr>
-    <td> Modulo Comprobacion Usuario </td>
+    <td> Modulo Comprobacion Pregunta Usuario </td>
     <td><b></b></td>
     <td></td>
   </tr>
@@ -56,6 +56,12 @@
   </tr>
   
   <tr>
+    <td>Modulo comprobacion Letra Unidad Local</td>
+    <td><b></b></td>
+    <td></td>
+  </tr>
+  
+  <tr>
     <td> Modulo Comprobacion Directorios Remotos </td>
     <td><b></b></td>
     <td></td>
@@ -63,12 +69,6 @@
   
   <tr>
     <td> Modulo Comprobacion Directorios Locales </td>
-    <td><b></b></td>
-    <td></td>
-  </tr>
-  
-  <tr>
-    <td>Modulo comprobacion Letra Unidad Local</td>
     <td><b></b></td>
     <td></td>
   </tr>
