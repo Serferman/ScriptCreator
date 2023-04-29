@@ -89,7 +89,7 @@
 ## Diagrama de los Modulos
   <table>
     <tr>
-      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV2.png"/></td>
+      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
     </tr>
   </table>
 
