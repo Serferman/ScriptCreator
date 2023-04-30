@@ -77,7 +77,8 @@
 
 <br>
 
-### Diagrama de los Modulos
+### Diagrama del flujo de los Modulos
+
   <table>
     <tr>
       <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
@@ -86,7 +87,8 @@
 
   <br><br>
   
-### Diagrama de Flujo
+### Diagrama de flujo del código
+
   <table>
     <tr>
       <td><img src="Recursos/Diagramas/DiagramaDeFlujoV2.png"/></td>
