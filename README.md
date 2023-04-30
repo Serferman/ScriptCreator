@@ -79,7 +79,7 @@
 
 <br>
 
-<table>
+<table align="center">
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
     <td><b><h1> Breve descripción </h1></b></td>
