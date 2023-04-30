@@ -9,8 +9,8 @@
 
 <table>
   <tr align="center">
-    <td><h3><b> Modulos </b></h3></td>
-    <td><b> Variable </b></td>
+    <td><b><h3> Modulos </h3></b></td>
+    <td><b><h3> Variable </h3></b></td>
   </tr>
   
   <tr>
