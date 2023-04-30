@@ -10,7 +10,7 @@
 <table>
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
-    <td><b><h1> Variable </h1></b></td>
+    <td><b><h1> Variables </h1></b></td>
   </tr>
   
   <tr>
