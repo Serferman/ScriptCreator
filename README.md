@@ -156,7 +156,7 @@
     </tr>
   </table>
 
-  <br><br>
+  <br>
   
 ### Diagrama de flujo del código
 
