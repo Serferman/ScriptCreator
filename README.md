@@ -5,8 +5,6 @@
 
 <p> Como resultado, se ha creado una plantilla que permite crear tareas/scripts personalizados para cada caso (Copiar o Mapear). </p>
 
-<br>
-
 ## Funcionamiento
 
 <table>
