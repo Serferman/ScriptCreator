@@ -7,7 +7,7 @@
 
 ## Funcionamiento
 
-<table>
+<table align="center">
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
     <td><b><h1> Variables devueltas </h1></b></td>
