@@ -1,7 +1,7 @@
 # ScriptCreator Batch
 ## Descripcion
 
-<p> El enfoque de este proyecto es desarrollar un programa pequeño en Windows que nos permita generar scripts de batch (*.bat) para llevar a cabo diversas acciones, tales como asignar letras a las unidades locales para mapear carpetas remotas de nuestro servidor o copiar archivos de una carpeta local una carpeta remota. </p>
+<p> El enfoque de este proyecto es desarrollar un pequeño programa en Windows que nos permita generar scripts de batch (*.bat) para llevar a cabo diversas acciones, tales como asignar letras a las unidades locales para mapear carpetas remotas de nuestro servidor o copiar archivos de una carpeta local una carpeta remota. </p>
 
 <p> Como resultado, se ha creado una plantilla que permite crear tareas/scripts personalizados para cada caso (Copiar o Mapear). </p>
 
