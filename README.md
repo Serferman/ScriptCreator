@@ -34,7 +34,7 @@
   
   <tr>
     <td> Modulo_Comprobacion_Contraseña_Cifrado.bat </td>
-    <td align="center"><b> %PASSWORD_HASH% </b></td>
+    <td align="center"><b> %ENCRYPTED_PASSWORD% </b></td>
   </tr>
   
   <tr>
