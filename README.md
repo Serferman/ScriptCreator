@@ -98,7 +98,7 @@
 ## Diagrama de Flujo
   <table>
     <tr>
-      <td><img src="Recursos/Diagramas/DiagramaDeFlujoV1.png"/></td>
+      <td><img src="Recursos/Diagramas/DiagramaDeFlujoV2.png"/></td>
     </tr>
   </table>
   
