@@ -91,8 +91,9 @@
   </tr>
   
   <tr>
+    <td> Modulo_Comprobacion_Directorios_Locales.bat </td>
+    <td align="center"><b> %RUTA_LOCAL_COMPLETA% </b></td>
   </tr>
-  
 </table>
 
 <br>
