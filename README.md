@@ -62,13 +62,16 @@
     <td align="center"><b> %RUTA_LOCAL_COMPLETA% </b></td>
   </tr>
   
-  <tr>
-    <td> Modulo_Creacion_Nuevo_Script.bat </td>
-  </tr>
+<tr>
+  <td> Modulo_Creacion_Nuevo_Script.bat </td>
+  <td></td>
+</tr>
   
-  <tr>
-    <td> MainApp.bat </td>
-  </tr>
+<tr>
+  <td> MainApp.bat </td>
+  <td></td>
+</tr>
+  
 </table>
 
 <br>
