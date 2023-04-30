@@ -80,7 +80,14 @@
 <br>
 
 <table>
+  <tr align="center">
+    <td><b><h1> Modulos </h1></b></td>
+    <td><b><h1> Variables devueltas </h1></b></td>
+  </tr>
+
   <tr>
+    <td> Modulo_Comprobacion_Directorios_Locales.bat </td>
+    <td align="center"><b> %RUTA_LOCAL_COMPLETA% </b></td>
   </tr>
   
   <tr>
