@@ -80,7 +80,15 @@
 
 ### Diagrama del flujo de los Modulos
 
-<table align="center">
+ <table>
+   <tr>
+     <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
+   </tr>
+ </table>
+ 
+ <br>
+ 
+ <table align="center">
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
     <td><b><h1> Variables devueltas </h1></b></td>
@@ -145,16 +153,7 @@
     <td> MainApp.bat </td>
     <td></td>
   </tr>
-  
 </table>
-  
-  <br>
-  
- <table>
-   <tr>
-     <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
-   </tr>
- </table>
 
 ### Diagrama de flujo del código
 
