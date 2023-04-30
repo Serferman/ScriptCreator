@@ -7,6 +7,8 @@
 
 ## Funcionamiento
 
+<br>
+
 <table align="center">
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
@@ -71,6 +73,17 @@
   <tr>
     <td> MainApp.bat </td>
     <td></td>
+  </tr>
+  
+</table>
+
+<br>
+
+<table>
+  <tr>
+  </tr>
+  
+  <tr>
   </tr>
   
 </table>
