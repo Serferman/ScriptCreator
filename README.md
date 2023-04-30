@@ -80,6 +80,8 @@
 
 ### Diagrama del flujo de los Modulos
 
+ <br>
+
  <table>
    <tr>
      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
@@ -154,6 +156,8 @@
     <td></td>
   </tr>
 </table>
+
+<br>
 
 ### Diagrama de flujo del código
 
