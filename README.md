@@ -87,52 +87,52 @@
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat </td>
-    <td align="center"><b> %CANTIDAD_CARPETAS% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Nombre_Nuevo_Script.bat </td>
-    <td align="center"><b> %NOMBRE_ARCHIVO% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_IP.bat </td>
-    <td align="center"><b> %RUTA_RED% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
  
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Usuario.bat </td>
-    <td align="center"><b> %USUARIO% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Contraseña_Cifrado.bat </td>
-    <td align="center"><b> %ENCRYPTED_PASSWORD% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Mapear_Copiar.bat </td>
-    <td align="center"><b> %MAPEO_O_COPIAR% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Letra_Unidad_Remota.bat </td>
-    <td align="center"><b> %LETRA_UNIDAD_REMOTA% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_comprobacion_Letra_Unidad_Local.bat </td>
-    <td align="center"><b> %LETRA_UNIDAD_LOCAL% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Directorios_Remotos.bat </td>
-    <td align="center"><b> %CARPETA_RED% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Directorios_Locales.bat </td>
-    <td align="center"><b> %RUTA_LOCAL_COMPLETA% </b></td>
+    <td align="center"><b>  </b></td>
   </tr>
   
   <tr>
