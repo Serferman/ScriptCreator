@@ -9,9 +9,6 @@
 
 <br>
 
-
-<br>
-
 <table align="center">
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
@@ -83,15 +80,6 @@
 
 ### Diagrama del flujo de los Modulos
 
-  <table>
-    <tr>
-      <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
-    </tr>
-  </table>
-
-  <br>
-  
-  
 <table align="center">
   <tr align="center">
     <td><b><h1> Modulos </h1></b></td>
@@ -160,6 +148,14 @@
   
 </table>
   
+  <br>
+  
+ <table>
+   <tr>
+     <td><img src="Recursos/Diagramas/Diagrama_Flujo_ModulosV3.png"/></td>
+   </tr>
+ </table>
+
 ### Diagrama de flujo del código
 
   <table>
