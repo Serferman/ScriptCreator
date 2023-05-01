@@ -22,12 +22,12 @@
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Nombre_Nuevo_Script.bat </td>
-    <td> Este módulo sirve para definir el nombre y la extensión del script que se generará al terminar el script princiapl (MainApp) </td>
+    <td> Este módulo sirve para definir el nombre y la extensión del script (*.bat) que se generará al terminar el script princiapl (MainApp) </td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_IP.bat </td>
-    <td align="center"><b>  </b></td>
+    <td></td>
   </tr>
  
   <tr>
