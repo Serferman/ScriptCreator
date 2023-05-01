@@ -17,12 +17,12 @@
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat </td>
-    <td align="center"><b>  </b></td>
+    <td align="center"> Este módulo define la cantidad de acciones que querremos hacer sobre las carpetas (Limitador/Contador). </td>
   </tr>
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Nombre_Nuevo_Script.bat </td>
-    <td align="center"><b>  </b></td>
+    <td align="center"><b> </b></td>
   </tr>
   
   <tr>
