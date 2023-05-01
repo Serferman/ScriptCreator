@@ -17,7 +17,7 @@
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Cantidad_Carpetas.bat </td>
-    <td align="center"> Este módulo define la cantidad de acciones que querremos hacer sobre las carpetas (Limitador/Contador). </td>
+    <td> Este módulo define la cantidad de acciones que querremos hacer sobre las carpetas (Limitador/Contador). </td>
   </tr>
   
   <tr>
