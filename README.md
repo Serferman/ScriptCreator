@@ -22,7 +22,7 @@
   
   <tr>
     <td> Modulo_Comprobacion_Pregunta_Nombre_Nuevo_Script.bat </td>
-    <td align="center"><b> </b></td>
+    <td> Este módulo sirve para definir el nombre y la extensión del script que se generará al terminar el script princiapl (MainApp) </td>
   </tr>
   
   <tr>
