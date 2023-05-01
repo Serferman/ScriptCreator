@@ -148,12 +148,12 @@
   
   <tr>
     <td> Modulo_Creacion_Nuevo_Script.bat </td>
-    <td> NINGUNA </td>
+    <td align="center"><b> NINGUNA </b></td>
   </tr>
   
   <tr>
     <td> MainApp.bat </td>
-    <td> NINGUNA </td>
+    <td align="center"><b> NINGUNA </b></td>
   </tr>
 </table>
 
